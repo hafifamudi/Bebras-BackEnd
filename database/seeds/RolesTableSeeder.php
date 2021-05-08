@@ -1,5 +1,6 @@
 <?php
 
+use App\Role as AppRole;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
 
@@ -12,8 +13,11 @@ class RolesTableSeeder extends Seeder
      */
     public function run()
     {
-        $role = Role::create([
+        $role = AppRole::create([
             'name' => 'admin'
+        ]);
+        $role = AppRole::create([
+            'name' => 'user'
         ]);
     }
 }
