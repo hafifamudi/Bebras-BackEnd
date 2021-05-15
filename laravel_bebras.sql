@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 08, 2021 at 10:09 AM
+-- Generation Time: May 15, 2021 at 02:00 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.4.16
 
@@ -40,7 +40,6 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
-(1, 'Makanan', 'Gatau APa', '2021-05-08 00:53:17', '2021-05-08 00:53:17'),
 (2, 'test', 'test-1', '2021-05-08 00:57:33', '2021-05-08 00:57:33');
 
 -- --------------------------------------------------------
@@ -158,7 +157,7 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `image`, `title`, `slug`, `category_id`, `content`, `created_at`, `updated_at`) VALUES
-(1, '1620460433_bb.JPG', 'Bukber', 'Puasa', 1, '<p>Ayo buka puasa sekarang</p>', '2021-05-08 00:53:53', '2021-05-08 00:53:53');
+(2, '1621079875_1.jpg', 'hari kemerdekaan', 'hari-kemerdekaan', 2, 'test', '2021-05-15 03:57:55', '2021-05-15 03:58:11');
 
 -- --------------------------------------------------------
 
@@ -350,7 +349,7 @@ ALTER TABLE `photos`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `roles`
