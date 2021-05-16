@@ -69,7 +69,7 @@ class PostController extends Controller
     }
     public function delete(Request $request)
     {
-        $post = Post::find($request->id)->delete();
+        $post = Post::where($request->id)->delete();
         return redirect()->back()->with('success','Data berhasil dihapus');
     }
 
