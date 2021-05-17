@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 15, 2021 at 02:00 PM
+-- Generation Time: May 17, 2021 at 10:05 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.4.16
 
@@ -157,7 +157,8 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `image`, `title`, `slug`, `category_id`, `content`, `created_at`, `updated_at`) VALUES
-(2, '1621079875_1.jpg', 'hari kemerdekaan', 'hari-kemerdekaan', 2, 'test', '2021-05-15 03:57:55', '2021-05-15 03:58:11');
+(12, '1621238597_7011-phoenix-1920x1200-abstract-wallpaper.jpg', 'roadshow', 'roadshow-bebras', 2, '<p>testing</p>', '2021-05-17 00:03:17', '2021-05-17 00:03:17'),
+(13, '1621238638_35549.jpg', 'liburan', 'liburan-bebras', 2, '<p>testing</p>', '2021-05-17 00:03:58', '2021-05-17 00:03:58');
 
 -- --------------------------------------------------------
 
@@ -349,7 +350,7 @@ ALTER TABLE `photos`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `roles`
