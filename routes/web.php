@@ -46,7 +46,7 @@ Route::group(['middleware' => 'auth'], function () {
                 Route::get('/edit/{id}', 'Admin\PostController@edit')->name('edit');
                 Route::get('/detail/{id}', 'Admin\PostController@detail')->name('detail');
                 Route::put('/', 'Admin\PostController@update')->name('update');
-                Route::delete('/', 'Admin\PostController@delete')->name('delete');
+                Route::delete('/{id}', 'Admin\PostController@delete')->name('delete');
             });
             Route::prefix('event')->name('event.')->group(function () {
                 Route::get('/', 'Admin\EventController@index')->name('index');
