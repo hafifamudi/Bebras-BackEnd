@@ -17,3 +17,14 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// posts
+Route::get('/post', 'Api\PostController@index');
+Route::get('/post/{slug?}', 'Api\PostController@show');
+Route::get('/event', 'Api\EventController@index');
+Route::get('/event/{slug?}', 'Api\EventController@show');
+Route::get('/slider', 'Api\SliderController@index');
+Route::get('/category', 'Api\CategoryController@index');
+Route::get('/category/{slug?}', 'Api\CategoryController@show');
+Route::get('/photo', 'Api\PhotoController@index');
+Route::get('/video', 'Api\VideoController@index');
