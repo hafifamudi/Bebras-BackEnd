@@ -6,7 +6,7 @@ use App\Category;
 use App\Http\Controllers\Controller;
 use App\Post;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Str;
 class PostController extends Controller
 {
     public function index()
@@ -27,12 +27,13 @@ class PostController extends Controller
         $path = 'images';
         $photo->move($path, $namePhoto);
 
-        $data['image'] =  $namePhoto;
-        $data['title'] = $request->title;
-        $data['content'] = $request->content;
-        $data['category_id'] = $request->category_id;
-        $data['slug'] = $request->slug;
-        $post = Post::create($data);
+        $post = Post::create([
+            'image' =>  $namePhoto,
+            'title' => $request->title,
+            'slug' => Str::slug($request->title, '-'),
+            'content' => $request->content,
+            'category_id' => $request->category_id,
+        ]);
         return redirect(route('admin.post.index'))->with('success','Data berhasil ditambahkan');
     }
     public function edit($id)
@@ -62,7 +63,7 @@ class PostController extends Controller
         }
         $data['title'] = $request->title;
         $data['content'] = $request->content;
-        $data['slug'] = $request->slug;
+        $data['slug'] = Str::slug($request->title, '-');
         $data['category_id'] = $request->category_id;
         $post->update($data);
         return redirect(route('admin.post.index'))->with('success','Data berhasil diubah');
