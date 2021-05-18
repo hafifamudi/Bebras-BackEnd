@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 15, 2021 at 02:00 PM
+-- Generation Time: May 18, 2021 at 10:17 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.4.16
 
@@ -40,7 +40,7 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
-(2, 'test', 'test-1', '2021-05-08 00:57:33', '2021-05-08 00:57:33');
+(1, 'Roadshow', 'roadshow', '2021-05-18 00:13:24', '2021-05-18 00:13:24');
 
 -- --------------------------------------------------------
 
@@ -64,7 +64,7 @@ CREATE TABLE `events` (
 --
 
 INSERT INTO `events` (`id`, `title`, `slug`, `content`, `location`, `date`, `created_at`, `updated_at`) VALUES
-(1, 'kukik', 'kakak', 'gugugu', 'wkwk', '2021-05-08', '2021-05-08 00:59:46', '2021-05-08 00:59:46');
+(1, 'roadshow', 'roadshow', 'roadshow bebras', 'lombok timur', '2021-05-18', '2021-05-18 00:14:52', '2021-05-18 00:14:52');
 
 -- --------------------------------------------------------
 
@@ -135,6 +135,13 @@ CREATE TABLE `photos` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `photos`
+--
+
+INSERT INTO `photos` (`id`, `image`, `caption`, `created_at`, `updated_at`) VALUES
+(1, '1621325720_7f94593f51974c7699df28c2a65e58707d34c184.jpg', 'acara roadshow bebras di lotim', '2021-05-18 00:15:20', '2021-05-18 00:15:20');
+
 -- --------------------------------------------------------
 
 --
@@ -157,7 +164,7 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `image`, `title`, `slug`, `category_id`, `content`, `created_at`, `updated_at`) VALUES
-(2, '1621079875_1.jpg', 'hari kemerdekaan', 'hari-kemerdekaan', 2, 'test', '2021-05-15 03:57:55', '2021-05-15 03:58:11');
+(1, '1621325662_7de8eae3260fabc930c8d4778d1c3eda9a30dc53.png', 'roadshow di lombok timur', 'roadshow-di-lombok-timur', 1, '<p>acara roadshow bebras di lombok timur&nbsp;</p>', '2021-05-18 00:14:22', '2021-05-18 00:14:22');
 
 -- --------------------------------------------------------
 
@@ -177,8 +184,8 @@ CREATE TABLE `roles` (
 --
 
 INSERT INTO `roles` (`id`, `name`, `created_at`, `updated_at`) VALUES
-(1, 'admin', '2021-05-08 00:52:12', '2021-05-08 00:52:12'),
-(2, 'user', '2021-05-08 00:52:12', '2021-05-08 00:52:12');
+(1, 'admin', '2021-05-18 00:12:17', '2021-05-18 00:12:17'),
+(2, 'user', '2021-05-18 00:12:17', '2021-05-18 00:12:17');
 
 -- --------------------------------------------------------
 
@@ -192,6 +199,13 @@ CREATE TABLE `sliders` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `sliders`
+--
+
+INSERT INTO `sliders` (`id`, `image`, `created_at`, `updated_at`) VALUES
+(1, '1621325781_8dacadaa118660002a6b27f0ce3ccdcb0add5d39.jpg', '2021-05-18 00:16:21', '2021-05-18 00:16:21');
 
 -- --------------------------------------------------------
 
@@ -216,8 +230,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `role_id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Admin', 'admin@gmail.com', NULL, '$2y$10$pHp6R1J9tLnvqIHMQUqTR.sWxu1OF0n10GDYCtfXxq2wEYqVv4Z5q', NULL, '2021-05-08 00:52:12', '2021-05-08 00:52:12'),
-(2, 2, 'dayat', 'dayat@gmail.com', NULL, '$2y$10$r7gZ34.Uwn.o2OCR1zy26.XigZBMijwz4h1lwwmqcyz1EkcbHKrBa', NULL, '2021-05-08 00:52:12', '2021-05-08 01:01:11');
+(1, 1, 'Admin', 'admin@gmail.com', NULL, '$2y$10$zc74.Ni/Iy0LLYSGtxSgdOY7q/2t742yfq/P8/uymW.54fTGVrkvi', NULL, '2021-05-18 00:12:17', '2021-05-18 00:12:17'),
+(2, 2, 'User', 'user@gmail.com', NULL, '$2y$10$uV1WZW0XYEfcesyiR5.h3emHOaUQGa6PzgOMjyHtxwAHts7KoJHpW', NULL, '2021-05-18 00:12:17', '2021-05-18 00:12:17');
 
 -- --------------------------------------------------------
 
@@ -237,7 +251,7 @@ CREATE TABLE `videos` (
 --
 
 INSERT INTO `videos` (`id`, `link`, `created_at`, `updated_at`) VALUES
-(1, 'https://youtu.be/9AYl10qxc0M', '2021-05-08 00:58:41', '2021-05-08 00:58:41');
+(1, 'https://youtu.be/GxrsDSx5Hr8', '2021-05-18 00:16:01', '2021-05-18 00:16:01');
 
 --
 -- Indexes for dumped tables
@@ -319,7 +333,7 @@ ALTER TABLE `videos`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `events`
@@ -343,7 +357,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `photos`
 --
 ALTER TABLE `photos`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `posts`
@@ -361,7 +375,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `sliders`
 --
 ALTER TABLE `sliders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`

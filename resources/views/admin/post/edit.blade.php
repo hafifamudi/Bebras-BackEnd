@@ -29,10 +29,6 @@
                     <input type="text" id="title" name="title" value="{{$post->title}}" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="slug">Slug</label>
-                    <input type="text" id="slug" name="slug" value="{{$post->slug}}" class="form-control">
-                </div>
-                <div class="form-group">
                     <label for="content">Konten</label>
                     <textarea id="content" name="content">{{$post->content}}</textarea>
                 </div>
