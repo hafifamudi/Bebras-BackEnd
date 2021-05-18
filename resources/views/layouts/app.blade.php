@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,7 +6,7 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>BEBRAS UBG</title>
-    <link rel="shortcut icon" href="{{ asset('assets/img/bebras-ubg.png') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('assets/img/bebras.png') }}" type="image/x-icon">
     <!-- General CSS Files -->
     <link rel="stylesheet" href="{{ asset('assets/modules/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/modules/fontawesome/css/all.min.css') }}">
@@ -62,83 +62,55 @@
                         <a href="index.html">BEBRAS UBG</a>
                     </div>
                     <div class="sidebar-brand sidebar-brand-sm">
-                        <a href="index.html">SMK</a>
+                        <a href="index.html">BU</a>
                     </div>
                     <ul class="sidebar-menu">
                         <li class="menu-header">MAIN MENU</li>
                         <li class="{{ setActive('admin/dashboard') }}"><a class="nav-link"
                                 href="{{ route('admin.dashboard.index') }}"><i class="fas fa-tachometer-alt"></i>
                                 <span>Dashboard</span></a></li>
-                        @can('posts.index')
+                       
                         <li class="{{ setActive('admin/post') }}"><a class="nav-link"
                                 href="#"><i class="fas fa-book-open"></i>
                                 <span>Berita</span></a></li>
-                        @endcan
+                        
 
-                        @can('categories.index')
+                       
                         <li class="{{ setActive('admin/category') }}"><a class="nav-link"
-                                href="#"><i class="fas fa-folder"></i>
+                                href="{{route('admin.category.index')}}"><i class="fas fa-folder"></i>
                                 <span>Kategori</span></a></li>
-                        @endcan
+                        
 
-                        @can('events.index')
+                       
                         <li class="{{ setActive('admin/event') }}"><a class="nav-link"
                                 href="#"><i class="fas fa-bell"></i>
                                 <span>Agenda</span></a></li>
-                        @endcan
-
-                        @if(auth()->user()->can('photos.index') || auth()->user()->can('videos.index'))
-                        <li class="menu-header">GALERI</li>
-                        @endif
                         
-                        @can('photos.index')
+
+                        
+                        <li class="menu-header">GALERI</li>
+                        
+                        
+                       
                         <li class="{{ setActive('admin/photo') }}"><a class="nav-link"
                                 href="#"><i class="fas fa-image"></i>
                                 <span>Foto</span></a></li>
-                        @endcan
-
-                        @can('videos.index')
+                        
+                          
+                       
                         <li class="{{ setActive('admin/video') }}"><a class="nav-link"
                                 href="#"><i class="fas fa-video"></i>
                                 <span>Video</span></a></li>
-                        @endcan
-
-                        @if(auth()->user()->can('roles.index') || auth()->user()->can('permission.index') || auth()->user()->can('users.index'))
-                        <li class="menu-header">PENGATURAN</li>
-                        @endif
                         
-                        @can('sliders.index')
+
+                        
+                        <li class="menu-header">PENGATURAN</li>
+                        
+                        
+                       
                         <li class="{{ setActive('admin/slider') }}"><a class="nav-link"
-                                href="#"><i class="fas fa-laptop"></i>
-                                <span>Sliders</span></a></li>
-                        @endcan
-
-                        <li
-                            class="dropdown {{ setActive('admin/role'). setActive('admin/permission'). setActive('admin/user') }}">
-                            @if(auth()->user()->can('roles.index') || auth()->user()->can('permission.index') || auth()->user()->can('users.index'))
-                                <a href="#" class="nav-link has-dropdown"><i class="fas fa-users"></i><span>Users
-                                Management</span></a>
-                            @endif
-                            
-                            <ul class="dropdown-menu">
-                                @can('roles.index')
-                                    <li class="{{ setActive('admin/role') }}"><a class="nav-link"
-                                        href="#"><i class="fas fa-unlock"></i> Roles</a>
-                                </li>
-                                @endcan
-
-                                @can('permissions.index')
-                                    <li class="{{ setActive('admin/permission') }}"><a class="nav-link"
-                                    href="#"><i class="fas fa-key"></i>
-                                    Permissions</a></li>
-                                @endcan
-
-                                @can('users.index')
-                                    <li class="{{ setActive('admin/user') }}"><a class="nav-link"
-                                        href="#"><i class="fas fa-users"></i> Users</a>
-                                </li>
-                                @endcan
-                            </ul>
+                            href="#"><i class="fas fa-laptop"></i>
+                            <span>Sliders</span></a>
                         </li>
                     </ul>
                 </aside>
