@@ -21,11 +21,9 @@
                 </div>
             </div>
             <div class="card-body">
-            @php
-            $yt_code = explode('https://www.youtube.com/watch?v=', $video->link)[1] ?? explode('https://youtu.be/', $video->link)[1] ?? null;
-            @endphp
+ 
             
-            <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="100%" height="443" type="text/html" src="{{ 'https://www.youtube.com/embed/' . $yt_code }}">
+            <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="100%" height="443" type="text/html" src="{{ $video->link }}">
                 </iframe>
             </div>
         </div>

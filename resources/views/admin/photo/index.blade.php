@@ -135,7 +135,7 @@
 
 @push('script')
 <script>
-    $('#editSubject').on('show.bs.modal', (e) => {
+    $('#editSubject').on('.bs.modal', (e) => {
         var id = $(e.relatedTarget).data('id');
         var caption = $(e.relatedTarget).data('caption');
 
